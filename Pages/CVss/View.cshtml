@@ -1,0 +1,84 @@
+﻿@page
+@model CVs.Pages.CVss.ViewModel
+@{
+}
+
+<div class="container p-3">
+	<div class="row pt-4">
+		<div class="col-6">
+			<h2 class="text-primary">All Info of @Model.programmer.FirstName</h2>
+		</div>
+		<div class="col-6">
+
+		</div>
+	</div>
+
+	<br /><br />
+
+	<table class="table-bordered table-striped" style="width:100%">
+		<thead>
+			<tr>
+				<th>
+					First name
+				</th>
+				<th>
+					Last Name
+				</th>
+				<th>
+					Gender
+				</th>
+					
+				<th>
+					DateOfBirth
+				</th>
+				<th>
+					 Nationality
+				</th>
+				<th>
+					Programming Skills
+				</th>
+				<th>
+					Grade
+				</th>
+				<th>
+					Email
+				</th>
+				
+			</tr>
+		</thead>
+		<tbody>
+		
+			<tr>
+				<td width="25%">
+					@Model.programmer.FirstName
+				</td>
+				<td width="25%">
+					@Model.programmer.LastName
+				</td>
+				<td width="25%">
+					@Model.programmer.Gender
+				</td>
+				<td width="25%">
+					@Model.programmer.DateOfBirth
+				</td>
+				<td width="25%">
+					@Model.programmer.Nationality
+				</td>
+				<td width="25%">
+					@Model.programmer.Programing_Skills
+				</td>
+				<td width="25%">
+					@Model.programmer.Grade
+				</td>
+				<td width="25%">
+					@Model.programmer.Email
+				</td>
+
+
+			</tr>
+			
+		</tbody>
+	</table>
+
+</div>
+

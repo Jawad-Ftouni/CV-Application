@@ -1,0 +1,94 @@
+﻿@page
+@model CVs.Pages.CVss.DeleteModel
+@{
+}
+
+<form method="post">
+	<input hidden asp-for="Programmer.Id"/>
+	<div class="border p-3 mt-4">
+		<div class="row pb-2">
+			<h2 class="text-primary pl-3">Delete CV</h2>
+		<br />
+		</div>
+		<div class="mb-3">
+			<label asp-for="@Model.Programmer.FirstName"></label>
+			<input asp-for="@Model.Programmer.FirstName" disabled />
+		</div>
+		<div class="mb-3">
+			<label asp-for="@Model.Programmer.LastName"></label>
+			<input asp-for="@Model.Programmer.LastName" disabled/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="@Model.Programmer.DateOfBirth"></label>
+			<input asp-for="@Model.Programmer.DateOfBirth" disabled/>
+		</div>
+		<div class="mb-3">
+			<label asp-for="@Model.Programmer.Nationality"></label>
+			<select asp-for="Programmer.Nationality" class="form-select" asp-items=Model.Natio disabled> </select>
+		</div>
+		<div class="mb-3">	
+			<label asp-for="Programmer.Gender" style="padding-right:10px"></label>
+            <div class="form-check form-check-inline">
+              <input asp-for="Programmer.Gender" class="form-check-input" type="radio" value="Male" disabled/>
+              <label class="form-check-label">Male</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input asp-for="Programmer.Gender" class="form-check-input" type="radio" value="Female" disabled/>
+              <label class="form-check-label">Female</label>
+            </div>
+            
+            <div class="form-check form-check-inline">
+              <input asp-for="Programmer.Gender" class="form-check-input" type="radio" value="Others" disabled/>
+              <label class="form-check-label">Others</label>
+            </div>
+
+            
+        
+
+		
+		<div class="mb-3">
+			 <label asp-for="Programmer.Programing_Skills"></label><br />
+        <div class="form-check mb-3">
+            @foreach (var skill in @Model.skills)
+            {
+                <input  class="form-check-input" name="CheckedSkills" type="checkbox" value="@skill" disabled/>
+                <label class="form-check-label" >@skill</label><br />
+            }
+        </div>
+
+
+		</div>
+		<div class="mb-3">
+			<label asp-for="@Model.Programmer.Email"></label>
+			<input asp-for="@Model.Programmer.Email" class="form-control" disabled/>
+			 
+		</div>
+		<div class="mb-3">
+            <label asp-for="ConfirmEmail"></label>
+            <input asp-for="ConfirmEmail" class="form-control" disabled/>
+        
+        </div>
+
+		<div class="mb-3">
+				<label asp-for="x"></label>
+			<input type="number" asp-for="x" disabled/>
+		</div>
+		<div class="mb-3">
+				<label asp-for="y"></label>
+			<input type="number" asp-for="y" disabled/>
+		</div>
+		<div class="mb-3">
+				<label asp-for="sum"></label>
+			<input type="number" asp-for="sum" disabled/>
+		</div>
+
+
+		<div class="mb-3 text-end">
+            <button type="submit" class="btn btn-danger" style="width:150px;">Delete</button>
+            <a asp-page="/BrowseCv" class="btn btn-light mx-3" style="width:150px">Back to List</a>
+        </div>
+		</div>
+
+	</div>
+</form>
