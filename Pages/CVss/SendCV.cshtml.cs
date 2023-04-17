@@ -58,15 +58,12 @@ namespace CVs.Pages.CVss
         public int v { get; set; }
         [BindProperty]
         public int sum { get; set; }
-
-        public SendCVModel(AppDataBaseContext db, GradeService gd, IImageUploadService ims)
-        {
+        public SendCVModel(AppDataBaseContext db, GradeService gd, IImageUploadService ims){
             DB = db;
             gradeservice = gd;
             ImS = ims;
         }
-        public void OnGet()
-        {
+        public void OnGet(){
             Random rnd = new Random();
 
             x = rnd.Next(1, 21);
@@ -76,18 +73,16 @@ namespace CVs.Pages.CVss
           
         }
 
-        public async Task<IActionResult> OnPost(IFormFile Im)
-        {
-              if(sum != v)
-              {
+        public async Task<IActionResult> OnPost(IFormFile Im){
+
+              if(sum != v){
                   ModelState.AddModelError("Sum Validation", "The Summation is incorrect");
               }
 
-              if(Programmer.Email != ConfirmEmail)
-              {
+              if(Programmer.Email != ConfirmEmail){
                   ModelState.AddModelError("Email Validation", "The Email is incorrect");
               }
-
+              
 
             
 
